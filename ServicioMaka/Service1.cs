@@ -53,7 +53,7 @@ namespace ServicioMaka
                 IPEndPoint ieCliente = (IPEndPoint)sCliente.RemoteEndPoint;
                 string apodo = "";
                 string msg = "";
-                Console.WriteLine("Cliente conectado: {0} en el puerto {1}", ieCliente.Address, ieCliente.Port);
+                //Console.WriteLine("Cliente conectado: {0} en el puerto {1}", ieCliente.Address, ieCliente.Port);
 
                 using (NetworkStream ns = new NetworkStream(sCliente))
                 using (StreamReader sr = new StreamReader(ns))
@@ -71,7 +71,7 @@ namespace ServicioMaka
                         try
                         {
                             msg = sr.ReadLine();
-                            Console.WriteLine(msg);
+                            //Console.WriteLine(msg);
                             if (msg != null)
                             {
                                 if (msg.Length > 11 && msg.Substring(0, 11) == "-!''-{]:::C")
@@ -160,7 +160,7 @@ namespace ServicioMaka
                                                 sw.Flush();
                                             }
                                         }
-                                        Console.WriteLine("Se ha desconetado: " + msg.Substring(11));
+                                        //Console.WriteLine("Se ha desconetado: " + msg.Substring(11));
                                         break;
                                     }
                                     else
@@ -208,7 +208,7 @@ namespace ServicioMaka
 
                                     else
                                     {
-                                        Console.WriteLine(msg);
+                                        //Console.WriteLine(msg);
                                         sw.WriteLine(msg);
                                         sw.Flush();
                                     }
